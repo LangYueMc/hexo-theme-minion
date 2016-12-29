@@ -22,7 +22,7 @@
 {% endif %}
 
 {% if pageTitle != '' %}
-  {% set pageTitle = pageTitle + '| ' %}
+  {% set pageTitle = pageTitle + ' | ' %}
 {% endif %}
 
 {% set pageTitle = pageTitle + config.title %}
@@ -31,6 +31,7 @@
 <html lang="{{ config.language }}">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <title>{{ pageTitle }}</title>
   {% if theme.stylesheets !== undefined && theme.stylesheets.length > 0 %}
     {# stylesheet list from config.yml #}
@@ -42,14 +43,15 @@
 </head>
 <body>
 
-<div id="menu-outer">
+{# <div id="menu-outer">
   <div id="menu-inner">
     {% for key in Object.keys(theme.menu) %}
       <a href="{{ theme.menu[key] }}">{{ key }}</a>
     {% endfor %}
   </div>
-</div>
-
+</div> #}
+{% include 'sidebar.swig' %}
+<!--
 <div id="content-outer">
   <div id="content-inner">
     {# {% autoescape false %}{{ body }}{% endautoescape %} #}
@@ -64,7 +66,7 @@
     <br>
     <a href="{{ config.root }}">Home</a>
   </div>
-</div>
+</div> -->
 
 {% if theme.scripts !== undefined && theme.scripts.length > 0 %}
   {# scripts list from config.yml #}

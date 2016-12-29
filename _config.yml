@@ -4,10 +4,14 @@ language: en
 
 # main menu navigation
 menu:
-  Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives
+  Home: 
+    icon: home
+    title: 首页
+    href: /
+  Archives: 
+    icon: list-ul
+    title: 归档
+    href: /archives
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -15,7 +19,9 @@ favicon: /favicon.ico
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/minion.css
+- //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 # scripts loaded in the end of the body
 scripts:
+- //cdn.bootcss.com/jquery/2.0.3/jquery.min.js
 - /js/minion.js
