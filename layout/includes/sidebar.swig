@@ -8,4 +8,7 @@
       {% endfor %}
     </ul>
   </div>
+  <div class="sidebar-bottom">
+  	<a><i class="fa fa-chevron-right"></i></a>
+  </div>
 </div>

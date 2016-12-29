@@ -3,7 +3,18 @@
   top: 0
   left: 0
   position: fixed
-  i:hover
+  a
+    display: block
+    width: sidebar-btn-size
+    height: sidebar-btn-size
+    text-align: center
+    line-height: sidebar-btn-size
+    color: #fff
+    cursor: pointer
+    i
+      font-style: normal
+  a:hover
+    background: color-sidebar
     color: #BBB
   .sidebar-title
     display: none
@@ -19,36 +30,26 @@
     span
       cursor: default
   .sidebar-search
-    display: block
-    width: sidebar-btn-size
-    height: sidebar-btn-size
-    text-align: center
-    line-height: sidebar-btn-size
-    color: #fff
     border-bottom: 1px solid #666
   .sidebar-menu
     position: relative
     ul
       list-style: none
-      margin: 10px 0 0 0
+      margin: 0
       padding: 0
       border: 0
       a:hover
         color: #BBB
       a
-        display: block
-        width: sidebar-btn-size
-        height: sidebar-btn-size
-        text-align: center
-        line-height: sidebar-btn-size
-        text-decoration: none
-        cursor: auto
-        color: #fff
         i
           font-size: 20px
           line-height: 20px
         span
           display: none
+  .sidebar-bottom
+    position: absolute
+    bottom: 0
+    right: 0
   @media mq-normal
     height: 100%
     width: sidebar-btn-size
@@ -57,12 +58,13 @@
     width: sidebar-btn-size
   @media mq-mobile
     width: 100%
+    a:hover
+      background: none
     .sidebar-title
       display: block
-      height: sidebar-btn-size
-      color: #fff
+      width: 100%
+      text-align: left
       font-size: 20px
-      line-height: sidebar-btn-size
       i.fa
         height: sidebar-btn-size
         width: sidebar-btn-size
@@ -98,3 +100,5 @@
               margin-left: 8px
     .sidebar-menu.show
       display: block
+    .sidebar-bottom
+      display: none
