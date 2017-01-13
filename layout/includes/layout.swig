@@ -31,7 +31,7 @@
 <html lang="{{ config.language }}">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <title>{{ pageTitle }}</title>
   {% if theme.stylesheets !== undefined && theme.stylesheets.length > 0 %}
     {# stylesheet list from config.yml #}
@@ -43,30 +43,22 @@
 </head>
 <body>
 
-{# <div id="menu-outer">
-  <div id="menu-inner">
-    {% for key in Object.keys(theme.menu) %}
-      <a href="{{ theme.menu[key] }}">{{ key }}</a>
-    {% endfor %}
-  </div>
-</div> #}
 {% include 'sidebar.swig' %}
-<!--
-<div id="content-outer">
-  <div id="content-inner">
-    {# {% autoescape false %}{{ body }}{% endautoescape %} #}
-    {% block body %}{% endblock %}
+
+<div class="container">
+  <div class="outer">
+    <div class="main">
+      <div class="main-inner">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-inner">
+        {% include 'footer.swig' %}
+      </div>
+    </div>
   </div>
 </div>
-
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    Site by {{ config.author }} using
-    <a href="http://hexo.io">hexo blog framework</a>.
-    <br>
-    <a href="{{ config.root }}">Home</a>
-  </div>
-</div> -->
 
 {% if theme.scripts !== undefined && theme.scripts.length > 0 %}
   {# scripts list from config.yml #}
@@ -74,6 +66,7 @@
     <script src="{{ url }}"></script>
   {% endfor %}
 {% endif %}
+{% block scripts %}{% endblock %}
 
 </body>
 </html>

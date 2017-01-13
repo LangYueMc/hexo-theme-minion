@@ -5,3 +5,8 @@ $(function() {
     $(".sidebar .sidebar-menu").toggleClass("show");
   });
 });
+document.onreadystatechange = function () {
+  if(document.readyState=="complete") {
+    NProgress.done();
+  }
+}
